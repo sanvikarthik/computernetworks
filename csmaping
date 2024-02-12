@@ -54,8 +54,7 @@ int main (int argc, char *argv[])
   ApplicationContainer app;
 
   // Create an optional packet sink to receive these packets
-  PacketSinkHelper sink ("ns3::UdpSocketFactory",
-                         Address (InetSocketAddress (Ipv4Address::GetAny (), port)));
+  PacketSinkHelper sink ("ns3::UdpSocketFactory",Address (InetSocketAddress (Ipv4Address::GetAny (), port)));
   app = sink.Install (c.Get (3));
   app.Start (Seconds (0.0));
 
@@ -72,8 +71,7 @@ int main (int argc, char *argv[])
   apps.Stop (Seconds (5.0));
 
   // finally, print the ping rtts.
-  Config::Connect ("/NodeList//ApplicationList//$ns3::V4Ping/Rtt",
-                   MakeCallback (&PingRtt));
+  Config::Connect ("/NodeList//ApplicationList//$ns3::V4Ping/Rtt", MakeCallback (&PingRtt));
 
    NS_LOG_INFO ("Run Simulation.");
 
