@@ -48,7 +48,7 @@ devices.Get (1)->SetAttribute ("ReceiveErrorModel", PointerValue (em));
 Ipv4GlobalRoutingHelper::PopulateRoutingTables ();
 
 uint32_t payloadSize = 1448;
-OnOffHelperonoff(socketType, Ipv4Address::GetAny ());
+OnOffHelper onoff(socketType, Ipv4Address::GetAny ());
 
 //Generate traffic by using OnOff application 
 onoff.SetAttribute("OnTime",	StringValue ("ns3::ConstantRandomVariable[Constant=1]")); 
