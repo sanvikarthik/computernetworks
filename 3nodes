@@ -60,13 +60,13 @@ uint16_t port = 7;
 //Install receiver (for packetsink) on node 2
 Addresslocal Address1(InetSocketAddress(Ipv4Address::GetAny(),port)); 
 PacketSinkHelper packetSinkHelper1 (socketType, localAddress1);
-ApplicationContainersinkApp1=packetSinkHelper1.Install(nodes.Get(2));
+ApplicationContainer sinkApp1=packetSinkHelper1.Install(nodes.Get(2));
 sinkApp1.Start (Seconds(0.0));
 sinkApp1.Stop (Seconds (10));
 
 //Install sender app on node 0
 ApplicationContainer apps;
-AddressValueremoteAddress(InetSocketAddress(interfaces.GetAddress(1), port));
+AddressValue remoteAddress(InetSocketAddress(interfaces.GetAddress(1), port));
 onoff.SetAttribute ("Remote",remoteAddress); 
 apps.Add (onoff.Install (nodes.Get (0)));
 apps.Start (Seconds (1.0));
