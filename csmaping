@@ -82,3 +82,5 @@ int main (int argc, char *argv[])
   Simulator::Destroy ();
   NS_LOG_INFO ("Done.");
 }
+
+ // command: ./waf run-- scratch/program2 --vis (build program in scratch folder)
