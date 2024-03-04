@@ -82,3 +82,13 @@ gnuplot> set output "cwnd.png"
 gnuplot> plot "cwnd.dat" using 1:2 title 'Congestion Window' with lines points gnuplot
 > exit
 */
+/* Ns3- LAN Congestion window execution steps:
+1.	./waf --run scratch/file_name  --vis
+Redirect the output to a file called cwnd.dat
+2.	./waf --run scratch/file_name > cwnd.dat 2>&1
+Create file cwnd.png (Congestion window graph) from cwnd.dat
+ run gnuplot from terminal.
+3.	gnuplot> set terminal png size 640,480
+4.	gnuplot> set output "cwnd.png"
+5.	gnuplot> plot "cwnd.dat" using 1:2 title 'Congestion Window' with lines points gnuplot
+6.	exit */
